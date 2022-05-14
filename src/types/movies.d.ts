@@ -6,6 +6,6 @@ export declare interface IMovie {
   imdbID: string
 }
 
-export declare interface IFavoriteData {
+export declare interface IFavoriteMovieData {
   Movies: IMovie[]
 }
