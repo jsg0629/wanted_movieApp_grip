@@ -2,11 +2,11 @@
 
 .main {
   position: relative;
-  width: 360px;
-  height: 720px;
+  width: 380px;
+  height: 750px;
   padding: 40px;
   background-color: colors.$BACKGROUND_COLOR;
-  border-radius: 60px;
+  border-radius: 50px;
 
   .profileWrraper {
     position: relative;
@@ -34,7 +34,7 @@
   }
 
   section {
-    margin-top: 40px;
+    margin-top: 25px;
     color: colors.$BIG_TITLE;
   }
 }

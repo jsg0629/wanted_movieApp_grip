@@ -1,11 +1,16 @@
 import React from 'react'
 import style from './MovieList.module.scss'
-import Movies from './movies'
+import Movie from './movie'
+import dummyData from 'services/dummy'
 
 const MovieList = (): JSX.Element => {
   return (
     <div className={style.movieListWrraper}>
-      <Movies />
+      <ul>
+        {dummyData.Search.map((el) => (
+          <Movie key={el.imdbID} Title={el.Title} Year={el.Year} Poster={el.Poster} />
+        ))}
+      </ul>
     </div>
   )
 }
