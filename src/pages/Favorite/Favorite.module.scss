@@ -1,9 +1,25 @@
 @use '/src/styles/constants/colors';
 
 .favorite {
-  width: 360px;
-  height: 720px;
-  padding: 40px;
+  position: relative;
+  width: 380px;
+  height: 750px;
+  padding: 40px 40px 15px;
   background-color: colors.$BACKGROUND_COLOR;
-  border-radius: 60px;
+  border-radius: 50px;
+
+  h1 {
+    margin-top: 30px;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: colors.$BIG_TITLE;
+  }
+
+  section {
+    margin-top: 40px;
+  }
+
+  nav {
+    margin-top: 81px;
+  }
 }
