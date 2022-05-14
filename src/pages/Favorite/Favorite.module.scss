@@ -9,6 +9,9 @@
   }
 
   section {
+    height: 459px;
     margin: 40px 0 81px;
+    overflow: scroll;
+    color: colors.$BIG_TITLE;
   }
 }

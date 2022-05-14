@@ -1,17 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import style from './Serch.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
-import { useRecoilState } from 'recoil'
+import { useSetRecoilState } from 'recoil'
 import { searchValue } from 'hooks/atoms'
 
 const Serch = (): JSX.Element => {
-  const [InputValue, setInputValue] = useRecoilState(searchValue)
+  const setSearchValue = useSetRecoilState(searchValue)
+  const [chagedInputValue, setChagedInputValue] = useState('')
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault()
+    setSearchValue(chagedInputValue)
+    setChagedInputValue('')
   }
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    setInputValue(e.currentTarget.value)
+    setChagedInputValue(e.currentTarget.value)
   }
 
   return (
@@ -23,7 +26,7 @@ const Serch = (): JSX.Element => {
         <input
           className={style.serchInput}
           type='text'
-          value={InputValue}
+          value={chagedInputValue}
           placeholder='Search'
           onChange={handleInputChange}
         />

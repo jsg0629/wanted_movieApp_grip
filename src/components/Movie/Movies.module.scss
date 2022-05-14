@@ -23,9 +23,10 @@
   .movieTitle {
     display: inline-block;
     width: 100px;
+    height: 90px;
     margin-top: 10px;
     margin-left: 110px;
-    overflow: hidden;
+    overflow: scroll;
     font-weight: 500;
     line-height: 1.4rem;
     color: colors.$BIG_TITLE;

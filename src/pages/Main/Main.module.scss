@@ -27,7 +27,9 @@
   }
 
   section {
+    height: 480px;
     margin-top: 25px;
+    overflow: scroll;
     color: colors.$BIG_TITLE;
   }
 }
