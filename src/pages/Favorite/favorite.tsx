@@ -1,7 +1,6 @@
 import React from 'react'
 import style from './Favorite.module.scss'
 import MovieList from 'components/Movie/movieList'
-import Nav from 'components/Nav/nav'
 
 const Favorite = (): JSX.Element => {
   return (
@@ -11,7 +10,6 @@ const Favorite = (): JSX.Element => {
         <section>
           <MovieList />
         </section>
-        <Nav />
       </main>
     </div>
   )

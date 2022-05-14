@@ -3,7 +3,6 @@ import styles from './Main.module.scss'
 import userImg from '../../assets/image.avif'
 import SerchInput from '../../components/SerchInput/serch'
 import MovieList from '../../components/Movie/movieList'
-import Nav from '../../components/Nav/nav'
 
 const Main = (): JSX.Element => {
   return (
@@ -23,7 +22,6 @@ const Main = (): JSX.Element => {
           </h2>
           <MovieList />
         </section>
-        <Nav />
       </main>
     </div>
   )
