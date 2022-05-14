@@ -1,3 +1,20 @@
-.serch {
-  background-color: aqua;
+@use '/src/styles/constants/colors';
+
+.serchInputWrraper {
+  height: 40px;
+  margin-top: 40px;
+  background-color: colors.$SUB_COLOR;
+  border-radius: 13px;
+
+  .serchIcon {
+    padding: 0 10px 0 15px;
+    font-weight: 300;
+    color: colors.$BIG_TITLE;
+  }
+
+  .serchInput {
+    width: 220px;
+    line-height: 40px;
+    color: colors.$BIG_TITLE;
+  }
 }
