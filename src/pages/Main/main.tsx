@@ -1,8 +1,8 @@
 import React from 'react'
 import styles from './Main.module.scss'
 import userImg from '../../assets/image.avif'
-import SerchInput from '../../components/SerchInput/serch'
-import MovieList from '../../components/Movie/movieList'
+import SerchInput from './SerchInput/serch'
+import MovieList from './MovieList/movieList'
 
 const Main = (): JSX.Element => {
   return (

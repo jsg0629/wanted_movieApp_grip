@@ -1,6 +1,6 @@
 import React from 'react'
 import style from './Favorite.module.scss'
-import MovieList from 'components/Movie/movieList'
+import FavoriteMovieList from './FavoriteList/favoriteMovieList'
 
 const Favorite = (): JSX.Element => {
   return (
@@ -8,7 +8,7 @@ const Favorite = (): JSX.Element => {
       <main className={style.favorite}>
         <h1>Favorite</h1>
         <section>
-          <MovieList />
+          <FavoriteMovieList />
         </section>
       </main>
     </div>
