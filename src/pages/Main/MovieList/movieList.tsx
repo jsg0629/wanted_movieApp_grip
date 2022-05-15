@@ -57,9 +57,8 @@ const MovieList = (): JSX.Element => {
       setPage((prevState) => prevState + 1)
     }
   }, [inView, isLoading])
-
   if (isLoading) return <ErrorMessage isLoading={isLoading} />
-  if (data?.Response === 'False' || !data) return <ErrorMessage isLoading={isLoading} message={data.Error} />
+  if (data?.Response === 'False' || !data) return <ErrorMessage isLoading={isLoading} message={data?.Error} />
   return (
     <div className={style.movieListWrraper}>
       <ul>
