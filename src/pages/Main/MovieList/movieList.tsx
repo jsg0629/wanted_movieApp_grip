@@ -31,8 +31,6 @@ const MovieList = (): JSX.Element => {
     setsearchValue('')
   })
 
-  console.log(data)
-
   if (isLoading) return <ErrorMessage isLoading={isLoading} />
   if (data?.Response === 'False' || !data) return <ErrorMessage isLoading={isLoading} message={data.Error} />
   return (

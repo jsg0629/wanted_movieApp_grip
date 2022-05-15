@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import style from './Movies.module.scss'
+import style from './FavoriteMovie.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 import { favoriteMovieData } from 'hooks/atoms'
@@ -7,7 +7,19 @@ import { useRecoilState } from 'recoil'
 import cx from 'classnames'
 import store from 'store'
 
-const Movie = ({ Title, Year, Poster, imdbID }: { Title: string; Year: string; Poster: string; imdbID: string }) => {
+const FavoriteMovie = ({
+  Title,
+  Year,
+  Poster,
+  imdbID,
+  updateFavoriteData,
+}: {
+  Title: string
+  Year: string
+  Poster: string
+  imdbID: string
+  updateFavoriteData: Function
+}) => {
   const [isFavorite, setIsFavorite] = useState(false)
   const [favoriteData, setFavoriteData] = useRecoilState(favoriteMovieData)
 
@@ -16,6 +28,9 @@ const Movie = ({ Title, Year, Poster, imdbID }: { Title: string; Year: string; P
     else addFavorite()
     setIsFavorite((prev) => !prev)
   }
+  useEffect(() => {
+    updateFavoriteData(() => favoriteData)
+  }, [favoriteData, updateFavoriteData])
 
   const addFavorite = () => {
     setFavoriteData((prevState) => {
@@ -45,7 +60,7 @@ const Movie = ({ Title, Year, Poster, imdbID }: { Title: string; Year: string; P
   }, [favoriteData])
 
   return (
-    <li className={style.movies}>
+    <li className={style.favoriteMovie}>
       <img src={`${Poster}`} alt='posterImg' />
       <div className={style.movieTitle}>{Title}</div>
       <div className={style.movieReleaseYear}>{Year}</div>
@@ -56,4 +71,4 @@ const Movie = ({ Title, Year, Poster, imdbID }: { Title: string; Year: string; P
   )
 }
 
-export default Movie
+export default FavoriteMovie
