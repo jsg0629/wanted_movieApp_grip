@@ -7,7 +7,19 @@ import { useRecoilState } from 'recoil'
 import cx from 'classnames'
 import store from 'store'
 
-const Movie = ({ Title, Year, Poster, imdbID }: { Title: string; Year: string; Poster: string; imdbID: string }) => {
+const Movie = ({
+  Title,
+  Year,
+  Poster,
+  imdbID,
+  Type,
+}: {
+  Title: string
+  Year: string
+  Poster: string
+  imdbID: string
+  Type: string
+}) => {
   const [isFavorite, setIsFavorite] = useState(false)
   const [favoriteData, setFavoriteData] = useRecoilState(favoriteMovieData)
 
@@ -20,7 +32,7 @@ const Movie = ({ Title, Year, Poster, imdbID }: { Title: string; Year: string; P
   const addFavorite = () => {
     setFavoriteData((prevState) => {
       return {
-        Movies: [...prevState.Movies, { Title, Year, Poster, imdbID }],
+        Movies: [...prevState.Movies, { Title, Year, Poster, imdbID, Type }],
       }
     })
   }
@@ -48,7 +60,9 @@ const Movie = ({ Title, Year, Poster, imdbID }: { Title: string; Year: string; P
     <li className={style.movies}>
       <img src={`${Poster}`} alt='posterImg' />
       <div className={style.movieTitle}>{Title}</div>
-      <div className={style.movieReleaseYear}>{Year}</div>
+      <div className={style.movieReleaseYear}>
+        {Year}, {Type}
+      </div>
       <button type='button' onClick={handleFavorite}>
         <FontAwesomeIcon className={cx(style.favoriteBtn, { [style.activeFavoriteBtn]: isFavorite })} icon={faStar} />
       </button>

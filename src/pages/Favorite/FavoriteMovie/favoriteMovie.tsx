@@ -12,12 +12,14 @@ const FavoriteMovie = ({
   Year,
   Poster,
   imdbID,
+  Type,
   updateFavoriteData,
 }: {
   Title: string
   Year: string
   Poster: string
   imdbID: string
+  Type: string
   updateFavoriteData: Function
 }) => {
   const [isFavorite, setIsFavorite] = useState(false)
@@ -35,7 +37,7 @@ const FavoriteMovie = ({
   const addFavorite = () => {
     setFavoriteData((prevState) => {
       return {
-        Movies: [...prevState.Movies, { Title, Year, Poster, imdbID }],
+        Movies: [...prevState.Movies, { Title, Year, Poster, imdbID, Type }],
       }
     })
   }
@@ -63,7 +65,9 @@ const FavoriteMovie = ({
     <li className={style.favoriteMovie}>
       <img src={`${Poster}`} alt='posterImg' />
       <div className={style.movieTitle}>{Title}</div>
-      <div className={style.movieReleaseYear}>{Year}</div>
+      <div className={style.movieReleaseYear}>
+        {Year}, {Type}
+      </div>
       <button type='button' onClick={handleFavorite}>
         <FontAwesomeIcon className={cx(style.favoriteBtn, { [style.activeFavoriteBtn]: isFavorite })} icon={faStar} />
       </button>

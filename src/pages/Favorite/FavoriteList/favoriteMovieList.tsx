@@ -21,6 +21,7 @@ const FavoriteMovieList = (): JSX.Element => {
             Year={el.Year}
             Poster={el.Poster}
             imdbID={el.imdbID}
+            Type={el.Type}
             updateFavoriteData={updateFavoriteData}
           />
         ))}

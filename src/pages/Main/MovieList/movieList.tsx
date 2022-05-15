@@ -64,7 +64,7 @@ const MovieList = (): JSX.Element => {
     <div className={style.movieListWrraper}>
       <ul>
         {data.Search?.map((el) => (
-          <Movie key={el.imdbID} Title={el.Title} Year={el.Year} Poster={el.Poster} imdbID={el.imdbID} />
+          <Movie key={el.imdbID} Title={el.Title} Year={el.Year} Poster={el.Poster} imdbID={el.imdbID} Type={el.Type} />
         ))}
       </ul>
       <span ref={ref} />
