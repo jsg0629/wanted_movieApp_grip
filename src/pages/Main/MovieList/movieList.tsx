@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import style from './MovieList.module.scss'
-import Movie from '../../../components/Movie/movie'
-import { getMovieData } from '../../../services/getMovieData'
+import Movie from 'components/Movie/movie'
+import { getMovieData } from 'services/getMovieData'
 import { useRecoilState } from 'recoil'
 import { searchValue } from 'hooks/atoms'
 import { IMovieList } from 'types/movies'
@@ -39,7 +39,7 @@ const MovieList = (): JSX.Element => {
     <div className={style.movieListWrraper}>
       <ul>
         {data.Search?.map((el) => (
-          <Movie key={el.imdbID} Title={el.Title} Year={el.Year} Poster={el.Poster} />
+          <Movie key={el.imdbID} Title={el.Title} Year={el.Year} Poster={el.Poster} imdbID={el.imdbID} />
         ))}
       </ul>
     </div>

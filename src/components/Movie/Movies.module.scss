@@ -42,10 +42,14 @@
     color: colors.$SUB_TITLE;
   }
 
-  .addFavoriteBtn {
+  .favoriteBtn {
     position: absolute;
     right: 15px;
     bottom: 18px;
     color: colors.$SUB_TITLE;
+  }
+
+  .activeFavoriteBtn {
+    color: rgb(255, 255, 0);
   }
 }
